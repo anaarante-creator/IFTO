@@ -1,190 +1,178 @@
 :root {
-    --cor-de-fundo: #0B0A14;
-    --branco-principal: #FFFFFF;
-    --botao-azul: #167BF7;
-    --cinza-secundario: #C0C0C0;
-    --fonte-principal: "Inter";
-    --efeito-lista: purple;
-    --botao-azul-efeito: #A860AA;
+    --roxo-nubank: #820AD1;
+    --roxo-escuro: #6D08B1;
+    --roxo-suave: #f5f0f9;
+    --branco: #FFFFFF;
+    --cinza-fundo: #F5F5F7;
+    --texto-preto: #111111;
+    --texto-cinza: #4E4E4E;
 }
 
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-    background-color: var(--cor-de-fundo);
-    color: var(--branco-principal);
-    font-family: var(--fonte-principal);
-    font-size: 1rem;
-
+    background-color: var(--branco);
+    color: var(--texto-preto);
+    font-family: "Inter", sans-serif;
 }
 
-.principal {
-    background-image: url('../img/new_fundo\ 1.png');
-    background-repeat: no-repeat;
-    background-size: contain;
-    align-items: center;
+/* --- CABEÇALHO ROXO NUBANK --- */
+.cabecalho-principal {
+    width: 100%;
+}
+
+.cabecalho__banner {
+    background-color: var(--roxo-nubank);
+    padding: 4rem 1rem;
     text-align: center;
 }
 
-.container {
-    display: grid;
-    grid-template-columns: 50% 50%;
-    height: 100vh;
-}
-
-.container__caixa {
-    margin-left: 2rem;
-    margin-right: 10rem;
-    margin-top: 0;
-    margin-bottom: 0;
-}
-
-.container__titulo {
-    font-size: 1.75rem;
-}
-
-.container__imagem {
-    margin-top: 1rem;
-    margin-right: 0;
-    margin-bottom: 2rem;
-    margin-left: 0;
-}
-
-.container__botao {
-    background-color: var(--botao-azul);
-    border-radius: 0.5rem;
-    padding: 1rem;
-    color: var(--branco-principal);
-    display: block;
-    text-decoration: none;
+.banner__titulo {
+    color: var(--branco);
+    font-size: 2.5rem;
+    font-weight: 700;
     margin-bottom: 1rem;
 }
 
-.container__botao__secundario {
-    background-color: transparent;
-    border: 2px solid var(--branco-principal);
+.banner__subtitulo {
+    color: var(--roxo-suave);
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto;
 }
 
-.secundario {
-    align-items: center;
-    margin: 0 10rem;
+.cabecalho__navegacao {
+    background-color: var(--roxo-escuro);
 }
 
-.secundario_imagem {
-    width: 70%;
-}
-
-.container__descricao {
-    padding: 2rem;
-}
-
-.descricao__titulo {
-    font-size: 3rem;
-    color: var(--branco-principal);
-    margin-bottom: 0.1rem;
-}
-
-.descricao__texto {
-    color: var(--branco-principal);
-}
-
-.secundario__botao {
-    margin-top: 0.3rem;
-    display: inline-block;
-}
-
-.dispositivos {
-    text-align: center;
-}
-
-.dispositivos__titulo {
-    font-size: 3rem;
-}
-
-.dispositivos__lista {
-    display: flex;
-    list-style: none;
-    justify-content: center;
-}
-
-.lista__item {
-    font-size: 2rem;
-    color: var(--branco-principal);
-}
-
-.rodape {
-    text-align: center;
-    margin: 5rem 3rem;
-}
-
-.rodape__lista {
+.navegacao__lista {
     display: flex;
     justify-content: center;
     list-style: none;
-    gap: 1rem;
-    margin: 1rem 0;
 }
 
-.lista__link a {
+.navegacao__item {
+    display: block;
+    padding: 1rem 2rem;
+    color: var(--branco);
     text-decoration: none;
-    color: var(--branco-principal);
-    margin-left: 1rem;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: 0.3s;
 }
 
-.rodape__texto {
-    margin: 1rem 0;
-    color: var(--cinza-secundario);
-    font-size: 0.8rem;
+/* Efeito branco transparente no mouse */
+.navegacao__item:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
 }
 
-.lista__link a:hover {
-    color: var(--botao-azul);
+/* --- CONTEÚDO --- */
+.container { 
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    padding: 5rem 10%; 
+    gap: 4rem; 
 }
 
-.lista__link a:active {
-    color: purple;
+.secundario:nth-of-type(even) { 
+    background-color: var(--cinza-fundo); 
+    flex-direction: row-reverse; 
 }
 
-.container__botao:hover {
-    background-color: var(--botao-azul-efeito);
-    color: var(--cor-de-fundo);
+.secundario_imagem { width: 50%; max-width: 500px; border-radius: 8px; }
 
+.container__descricao { width: 45%; }
+
+.descricao__titulo { font-size: 2.2rem; color: var(--roxo-nubank); margin-bottom: 1rem; }
+
+.descricao__texto { font-size: 1.1rem; line-height: 1.6; margin-bottom: 2rem; }
+
+.container__botao {
+    display: inline-block;
+    background-color: var(--roxo-nubank);
+    border-radius: 50px;
+    padding: 1rem 2rem;
+    color: var(--branco);
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
 }
 
+/* --- DISPOSITIVOS --- */
+.dispositivos { padding: 5rem 1rem; text-align: center; }
+.dispositivos__lista { display: flex; justify-content: center; list-style: none; gap: 2rem; margin-top: 3rem; }
+.dispositivos__card { background-color: var(--roxo-nubank); padding: 2.5rem; border-radius: 20px; width: 300px; }
+.dispositivos__card img { width: 100%; margin-bottom: 1rem; }
+.lista__item { color: var(--branco); font-size: 1.1rem; }
+
+/* --- RODAPÉ CENTRALIZADO --- */
+.rodape { 
+    background-color: var(--roxo-suave); 
+    padding: 4rem 1rem; 
+    text-align: center; 
+}
+
+.rodape__logo { 
+    width: 100px; 
+    margin-bottom: 2rem; 
+    opacity: 0.7; 
+}
+
+.rodape__lista { 
+    display: flex; 
+    justify-content: center; 
+    list-style: none; 
+    gap: 3rem; /* Espaço entre os links */
+    margin-bottom: 2rem; 
+}
+
+.lista__link a { 
+    text-decoration: none; 
+    color: var(--texto-preto); 
+    font-weight: 600; 
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+.lista__link a:hover { color: var(--roxo-nubank); }
+
+.rodape__info {
+    border-top: 1px solid rgba(0,0,0,0.05);
+    padding-top: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.rodape__texto { font-size: 0.75rem; color: var(--texto-cinza); margin-bottom: 0.5rem; }
+
+/* RESPONSIVIDADE */
 @media screen and (max-width: 768px) {
-    .container {
-        display: block;
-        background-image: none;
-    }
+    .container { flex-direction: column !important; text-align: center; }
+    .secundario_imagem, .container__descricao { width: 100%; }
+    .navegacao__lista, .rodape__lista { flex-direction: column; gap: 1.5rem; }
+    .dispositivos__lista { flex-direction: column; align-items: center; }
+}
 
-    .container__caixa {
-        margin: 2rem;
-    }
+/* --- REATIVANDO AS ANIMAÇÕES (MOUSE HOVER) --- */
 
-    .container__imagem {
-        width: 50vw;
-    }
+/* Faz o botão "Assine o Combo+" subir levemente */
+.container__botao:hover {
+    transform: translateY(-5px); /* Sobe 5 pixels */
+    box-shadow: 0 10px 20px rgba(130, 10, 209, 0.2); /* Adiciona uma sombra suave */
+}
 
-    .secundario {
-        text-align: center;
-        margin: 0;
-    }
+/* Faz os cards de Dispositivos (TV, PC, Celular) aumentarem de tamanho */
+.dispositivos__card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Garante que a animação seja suave */
+}
 
-    .secundario_imagem {
-        width: 50vw;
-    }
-
-
-    .dispositivos__lista {
-        display: block;
-    }
-
-    .rodape__lista {
-        display: block;
-    }
-
-
+.dispositivos__card:hover {
+    transform: scale(1.05); /* Aumenta 5% o tamanho */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15); /* Adiciona sombra para dar profundidade */
 }
